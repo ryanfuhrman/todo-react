@@ -1,17 +1,19 @@
 import React, { Component } from "react";
-
+import "./Todo.css";
 export default class Todo extends Component {
   constructor(props) {
     super(props);
     this.state = {
       edit: false,
       task: this.props.task,
+      completed: false,
     };
 
     this.handleRemove = this.handleRemove.bind(this);
     this.toggleEdit = this.toggleEdit.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.handleUpdate = this.handleUpdate.bind(this);
+    this.toggleComplete = this.toggleComplete.bind(this);
   }
 
   handleRemove() {
@@ -34,12 +36,23 @@ export default class Todo extends Component {
     });
   }
 
+  toggleComplete() {
+    this.setState(st => ({
+      completed: !st.completed,
+    }));
+  }
+
   render() {
     let display;
+    let complete = "";
+
+    if (this.state.completed) {
+      complete = " Todo-completed";
+    }
 
     if (this.state.edit) {
       display = (
-        <form onSubmit={this.handleUpdate}>
+        <form onSubmit={this.handleUpdate} className="Todo-form">
           <label htmlFor="task" />
           <input
             name="task"
@@ -47,19 +60,25 @@ export default class Todo extends Component {
             value={this.state.task}
             onChange={this.handleChange}
           />
-          <button>Update Todo</button>
+          <button className="btn">Update Todo</button>
         </form>
       );
     } else {
       display = (
-        <div>
-          <p>{this.props.task}</p>
-          <button onClick={this.toggleEdit}>edit</button>
-          <button onClick={this.handleRemove}>x</button>
+        <div Todo-div>
+          <p onClick={this.toggleComplete} className={`Todo-task ${complete}`}>
+            {this.props.task}
+          </p>
+          <button onClick={this.toggleEdit} className="btn">
+            edit
+          </button>
+          <button onClick={this.handleRemove} className="btn">
+            x
+          </button>
         </div>
       );
     }
 
-    return <li>{display}</li>;
+    return <li className="Todo">{display}</li>;
   }
 }
