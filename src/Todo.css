@@ -1,0 +1,33 @@
+.Todo-div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 40px;
+  background-color: #008000;
+  margin: 10px 10px;
+  border-radius: 8px;
+  color: white;
+}
+
+.Todo-task-div {
+  display: flex;
+  align-items: center;
+  width: 350px;
+  overflow: hidden;
+}
+
+.Todo-task {
+  cursor: pointer;
+  margin: 10px 20px;
+}
+
+.Todo-task-btns {
+  width: 45px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.Todo-completed {
+  text-decoration: line-through;
+  color: #004d00;
+}
