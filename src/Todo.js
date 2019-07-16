@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./Todo.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 export default class Todo extends Component {
   constructor(props) {
     super(props);
@@ -63,18 +64,26 @@ export default class Todo extends Component {
     } else {
       display = (
         <>
-          <div className="Todo-task-div">
-            <p onClick={this.handleToggle} className={`Todo-task ${complete}`}>
-              {this.props.task}
-            </p>
+          <div>
+            <div
+              onClick={this.handleToggle}
+              className={`Todo-task-div ${complete}`}
+            >
+              {!this.props.completed ? (
+                <FontAwesomeIcon icon="square" />
+              ) : (
+                <FontAwesomeIcon icon="check-square" />
+              )}
+              <p className="Todo-task">{this.props.task}</p>
+            </div>
           </div>
           <div className="Todo-task-btns">
-            <button onClick={this.toggleEdit} className="btn">
-              edit
-            </button>
-            <button onClick={this.handleRemove} className="btn">
-              x
-            </button>
+            <div onClick={this.toggleEdit} className="btn">
+              <FontAwesomeIcon icon="edit" />
+            </div>
+            <div onClick={this.handleRemove} className="btn">
+              <FontAwesomeIcon icon="trash-alt" />
+            </div>
           </div>
         </>
       );
