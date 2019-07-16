@@ -6,14 +6,13 @@ export default class Todo extends Component {
     this.state = {
       edit: false,
       task: this.props.task,
-      completed: false,
     };
 
     this.handleRemove = this.handleRemove.bind(this);
     this.toggleEdit = this.toggleEdit.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.handleUpdate = this.handleUpdate.bind(this);
-    this.toggleComplete = this.toggleComplete.bind(this);
+    this.handleToggle = this.handleToggle.bind(this);
   }
 
   handleRemove() {
@@ -36,17 +35,15 @@ export default class Todo extends Component {
     });
   }
 
-  toggleComplete() {
-    this.setState(st => ({
-      completed: !st.completed,
-    }));
+  handleToggle() {
+    this.props.toggleCompleted(this.props.id);
   }
 
   render() {
     let display;
     let complete = "";
 
-    if (this.state.completed) {
+    if (this.props.completed) {
       complete = " Todo-completed";
     }
 
@@ -60,25 +57,33 @@ export default class Todo extends Component {
             value={this.state.task}
             onChange={this.handleChange}
           />
-          <button className="btn">Update Todo</button>
+          <button className="form-btn">Update Todo</button>
         </form>
       );
     } else {
       display = (
-        <div Todo-div>
-          <p onClick={this.toggleComplete} className={`Todo-task ${complete}`}>
-            {this.props.task}
-          </p>
-          <button onClick={this.toggleEdit} className="btn">
-            edit
-          </button>
-          <button onClick={this.handleRemove} className="btn">
-            x
-          </button>
-        </div>
+        <>
+          <div className="Todo-task-div">
+            <p onClick={this.handleToggle} className={`Todo-task ${complete}`}>
+              {this.props.task}
+            </p>
+          </div>
+          <div className="Todo-task-btns">
+            <button onClick={this.toggleEdit} className="btn">
+              edit
+            </button>
+            <button onClick={this.handleRemove} className="btn">
+              x
+            </button>
+          </div>
+        </>
       );
     }
 
-    return <li className="Todo">{display}</li>;
+    return (
+      <li className="Todo">
+        <div className="Todo-div">{display}</div>
+      </li>
+    );
   }
 }
