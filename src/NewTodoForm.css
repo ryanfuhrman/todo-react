@@ -1,0 +1,26 @@
+.NewTodoForm {
+  height: 50px;
+  width: 350px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.NewTodoForm-input {
+  height: 50px;
+  width: 250px;
+  padding: 0px;
+  border: 1px solid #004d00;
+  border-radius: 4px;
+  margin-right: 5px;
+  font-size: 16px;
+  padding: 0px 10px;
+}
+
+.NewTodoForm-btn {
+  background-color: #004d00;
+  border: 1px solid #008000;
+  color: white;
+  height: 50px;
+  border-radius: 3px;
+}
