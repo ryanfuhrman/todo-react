@@ -63,7 +63,7 @@ export default class TodoList extends Component {
   render() {
     return (
       <div className="TodoList">
-        <h1 className="TodoList-header">Todo List!</h1>
+        <h1 className="TodoList-header">To-do List</h1>
         <div className="TodoList-NewTodoForm">
           <NewTodoForm addTodo={this.addTodo} />
         </div>
