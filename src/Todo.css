@@ -9,10 +9,37 @@
   color: white;
 }
 
+.Todo-form {
+  height: 40px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.Todo-form-input {
+  font-size: 16px;
+  margin: 0 10px;
+  padding: 0 10px;
+  height: 30px;
+  border-radius: 3px;
+  border: 1px solid white;
+}
+
+.Todo-form-btn {
+  font-size: 14px;
+  font-weight: bold;
+  height: 30px;
+  border-radius: 3px;
+  background-color: #008000;
+  border: 1px solid white;
+  color: white;
+}
+
 .Todo-task-div {
   display: flex;
   align-items: center;
   width: 350px;
+  height: 40px;
   overflow: hidden;
 }
 

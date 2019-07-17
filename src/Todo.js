@@ -53,29 +53,28 @@ export default class Todo extends Component {
         <form onSubmit={this.handleUpdate} className="Todo-form">
           <label htmlFor="task" />
           <input
+            className="Todo-form-input"
             name="task"
             type="text"
             value={this.state.task}
             onChange={this.handleChange}
           />
-          <button className="form-btn">Update Todo</button>
+          <button className="Todo-form-btn">Update</button>
         </form>
       );
     } else {
       display = (
         <>
-          <div>
-            <div
-              onClick={this.handleToggle}
-              className={`Todo-task-div ${complete}`}
-            >
-              {!this.props.completed ? (
-                <FontAwesomeIcon icon="square" />
-              ) : (
-                <FontAwesomeIcon icon="check-square" />
-              )}
-              <p className="Todo-task">{this.props.task}</p>
-            </div>
+          <div
+            onClick={this.handleToggle}
+            className={`Todo-task-div ${complete}`}
+          >
+            {!this.props.completed ? (
+              <FontAwesomeIcon icon="square" />
+            ) : (
+              <FontAwesomeIcon icon="check-square" />
+            )}
+            <p className="Todo-task">{this.props.task}</p>
           </div>
           <div className="Todo-task-btns">
             <div onClick={this.toggleEdit} className="btn">
