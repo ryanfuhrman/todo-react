@@ -7,23 +7,7 @@ export default class TodoList extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      todos: [
-        {
-          task: "walk the dog",
-          id: "anfk43lqbfa4kjfa4labfaj4f4fna4",
-          completed: false,
-        },
-        {
-          task: "take out the trash",
-          id: "aasdfaffawa4kjfa4labfaj4f4fna4",
-          completed: false,
-        },
-        {
-          task: "finish project",
-          id: "anfk52t4gb6balabfaj4f4fna4",
-          completed: false,
-        },
-      ],
+      todos: [],
     };
 
     this.addTodo = this.addTodo.bind(this);
