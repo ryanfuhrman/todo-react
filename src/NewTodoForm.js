@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import uuid from "uuid";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import "./NewTodoForm.css";
 
 export default class NewTodoForm extends Component {
   constructor(props) {
@@ -27,17 +29,20 @@ export default class NewTodoForm extends Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
+      <form onSubmit={this.handleSubmit} className="NewTodoForm">
         <label htmlFor="todo" />
         <input
+          className="NewTodoForm-input"
           id="todo"
           name="task"
           type="text"
-          placeholder="New Todo"
+          placeholder="New Task"
           onChange={this.handleChange}
           value={this.state.task}
         />
-        <button>Add To List</button>
+        <button className="NewTodoForm-btn">
+          <FontAwesomeIcon icon="plus" />
+        </button>
       </form>
     );
   }
