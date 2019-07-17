@@ -31,3 +31,16 @@
   text-decoration: line-through;
   color: #004d00;
 }
+
+@media (max-width: 500px) {
+  .Todo-div {
+    padding: 10px 20px;
+  }
+  .Todo-task-div {
+    width: auto;
+  }
+
+  .Todo-task {
+    margin: 10px;
+  }
+}
