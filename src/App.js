@@ -3,15 +3,15 @@ import TodoList from "./TodoList";
 import "./App.css";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import {
-  faTrash,
   faTrashAlt,
   faEdit,
   faSquare,
   faCheckSquare,
+  faPlus,
 } from "@fortawesome/free-solid-svg-icons";
 // import { faTrashAlt, faEdit } from "@fortawesome/fontawesome-free";
 
-library.add(faTrash, faTrashAlt, faEdit, faSquare, faCheckSquare);
+library.add(faTrashAlt, faEdit, faSquare, faCheckSquare, faPlus);
 
 function App() {
   return (
