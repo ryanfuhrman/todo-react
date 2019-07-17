@@ -1,5 +1,7 @@
 # todo-react
 
+![](img/appScreenshot.png)
+
 The To-do project as part of [Colt Steele's The Modern React Bootcamp](https://www.udemy.com/modern-react-bootcamp/) course.
 
 This project provides more practice working with React forms, passing props, keys, etc.
